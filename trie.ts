@@ -1,71 +1,55 @@
 /**
-* 
-* @author Pujan Srivastava
-*/
+ * A basic Trie (Prefix Tree) implementation in TypeScript.
+ * 
+ * @author Pujan Srivastava
+ */
 class Trie {
-    children: any;
-    value: string;
-    terminal: boolean = false;
+    private children: Map<string, Trie>;
+    private value: string;
+    private terminal: boolean;
 
-    constructor(value?: string) {
+    constructor(value: string = "") {
         this.value = value;
         this.children = new Map<string, Trie>();
+        this.terminal = false;
     }
 
-    add(c: string) {
-        let val:string;
-        if (this.value == null) {
-            val = c;
-        } else {
-            val = this.value + c;
-        }
-        this.children.set(c, new Trie(val));
+    private add(char: string): void {
+        const newValue = this.value + char;
+        this.children.set(char, new Trie(newValue));
     }
 
-    insert(word:string) {
-        let node:Trie = this;
-        for (let i= 0; i < word.length;i++){
-            let c = word.charAt(i);
-            if (!node.children.has(c)) {
-                node.add(c);
+    insert(word: string): void {
+        let node: Trie = this;
+        for (const char of word) {
+            if (!node.children.has(char)) {
+                node.add(char);
             }
-            node = node.children.get(c);
+            node = node.children.get(char)!;
         }
         node.terminal = true;
     }
 
-    autoComplete(prefix:string) {
-        let node:Trie = this;
-        let ret = [];
-        for (let i = 0; i < prefix.length; i++) {
-            let c = prefix.charAt(i);
-
-            if (!node.children.has(c)) {
+    autoComplete(prefix: string): string[] {
+        let node: Trie = this;
+        for (const char of prefix) {
+            const nextNode = node.children.get(char);
+            if (!nextNode) {
                 return [];
             }
-            node = node.children.get(c);
+            node = nextNode;
         }
-        return this.flatten(node.allPrefixes());
+        return node.collectWords();
     }
 
-    allPrefixes() {
-        let results = [];
-
+    private collectWords(): string[] {
+        const results: string[] = [];
         if (this.terminal) {
             results.push(this.value);
         }
-
-        this.children.forEach((value, key) => {
-            let child:Trie = value;
-            let childPrefixes = child.allPrefixes();
-            results = [...results, childPrefixes];  
-        });
-
+        for (const child of this.children.values()) {
+            results.push(...child.collectWords());
+        }
         return results;
-    }
-
-    flatten(arr) {
-        const flat = [].concat(...arr);
-        return flat.some(Array.isArray) ? this.flatten(flat) : flat;
     }
 }
