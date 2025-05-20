@@ -27,8 +27,8 @@ A lightweight and efficient **Trie (Prefix Tree)** data structure implemented in
 Clone the repo and install dependencies:
 
 ```bash
-git clone https://github.com/pujansrt/trie-js.git
-cd trie-js/trie-ts
+git clone https://github.com/pujansrt/trie-ts.git
+cd trie-ts
 npm install
 ```
 
@@ -62,5 +62,5 @@ Contributions are welcome! Please open an issue or submit a pull request.
 # 📜 License
 MIT License — free for personal and commercial use.
 
-#👤 Author
+# 👤 Author
 Developed and maintained by Pujan Srivastava, a mathematician and software engineer with 18+ years of programming experience.
