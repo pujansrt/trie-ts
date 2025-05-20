@@ -54,3 +54,13 @@ console.log(trie.autoComplete("ap"));  // ["apple", "app", "ape"]
 
 # Performance
 Trie of 100,000 Unique words, it took 23 ms to retrieve one.
+
+
+# 🤝 Contributing
+Contributions are welcome! Please open an issue or submit a pull request.
+
+# 📜 License
+MIT License — free for personal and commercial use.
+
+#👤 Author
+Developed and maintained by Pujan Srivastava, a mathematician and software engineer with 18+ years of programming experience.
