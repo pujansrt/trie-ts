@@ -1,0 +1,35 @@
+{
+  "name": "@pujansrt/trie-ts",
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "Pujan Srivastava <pujansrt@gmail.com>",
+  "license": "MIT",
+  "description": "",
+  "scripts": {
+    "benchmark": "tsx tests/trie.bench.ts"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "benny": "^3.7.1",
+    "eslint": "^9.30.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.1",
+    "jest": "^30.0.3",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.0"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/tests"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "moduleNameMapper": {
+      "^trie$": "<rootDir>/src/trie"
+    }
+  }
+}

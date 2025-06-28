@@ -1,9 +1,9 @@
 /**
  * A basic Trie (Prefix Tree) implementation in TypeScript.
- * 
+ *
  * @author Pujan Srivastava
  */
-class Trie {
+export class Trie {
     private children: Map<string, Trie>;
     private value: string;
     private terminal: boolean;
