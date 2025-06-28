@@ -6,6 +6,8 @@
   "license": "MIT",
   "description": "",
   "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage --coverageReporters text --coverageReporters lcov",
     "benchmark": "tsx tests/trie.bench.ts"
   },
   "devDependencies": {
@@ -15,6 +17,7 @@
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.5.1",
     "jest": "^30.0.3",
+    "jest-coverage-badges": "^1.1.2",
     "prettier": "^3.6.2",
     "ts-jest": "^29.4.0"
   },
