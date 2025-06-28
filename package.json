@@ -2,9 +2,15 @@
   "name": "@pujansrt/trie-ts",
   "version": "1.0.0",
   "keywords": [],
-  "author": "Pujan Srivastava <pujansrt@gmail.com>",
   "license": "MIT",
-  "description": "",
+  "description": "A TypeScript implementation of a Trie (prefix tree) data structure.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pujansrt/trie-ts.git"
+  },
+  "author": "pujansrt",
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage --coverageReporters text --coverageReporters lcov",
